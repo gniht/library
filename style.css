@@ -1,0 +1,17 @@
+div {
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  justify-content: start;
+}
+
+form div{
+  
+  justify-content: space-between;
+}
+
+button {
+  display: block;
+  margin: 10px;
+  padding: 10px;
+}
