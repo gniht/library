@@ -1,4 +1,20 @@
-let myLibrary = [{author: "noth", title: "bites and bits", numberOfPages: 23}];
+
+class Book{
+  constructor(author, title, numberOfPages){ 
+    this.author = author;
+    this.title = title;
+    this. numberOfPages = numberOfPages;
+    this.haveRead = false;
+  }
+  toggleHaveRead = function(){
+    if(haveRead){
+      haveRead = false;
+    }else{
+      haveRead = true;
+    }
+  } 
+}
+let myLibrary = [new Book("noth", "bites and bits", 23)];
 
 const libraryUI = document.createElement("div");
 document.body.appendChild(libraryUI);
@@ -27,11 +43,7 @@ libraryUI.addEventListener("click", e=>{
 
 
 
-function Book(author, title, numberOfPages){ 
-  this.author = author;
-  this.title = title;
-  this. numberOfPages = numberOfPages; 
-}
+
 
 function addBookToLibrary(){
   // const newBookForm = document.createElement("form");
@@ -93,9 +105,10 @@ function displayBookShelf(){
   libraryUI.append(booklist);
   
   myLibrary.forEach(book => {
-    const temp = document.createElement('li');
-    temp.innerText = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.numberOfPages}`
+    const temp = document.createElement('li');      
+    temp.innerHTML = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.numberOfPages}, Finished reading: ${book.haveRead} <input type='button'></input>`;
     booklist.append(temp);
   });    
 }
+
 
